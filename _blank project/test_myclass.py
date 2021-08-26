@@ -1,8 +1,8 @@
-from hiker import Hiker
+from myclass import MyClass
 import unittest
 
 
-class TestHiker(unittest.TestCase):
+class TestMyClass(unittest.TestCase):
     def test_something(self):
         pass
 
