@@ -42,7 +42,7 @@ class StringCalculator:
         if self.delimiter == None:
             res = re.split(',|\\n', input)
         else:
-            res = re.split(',|'+self.delimiter, input)
+            res = re.split(self.delimiter, input)
         return res
 
 if __name__ == '__main__':
