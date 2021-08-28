@@ -32,30 +32,24 @@ class ChangeUS:
             self.cents = input
 
         self.coin_list = CoinList()
-        self.coin_list.push(name='Q', value=25) #QUARTERS
-        self.coin_list.push(name='D', value=10) #DIMES
-        self.coin_list.push(name='N', value=5) #NICKLES
         self.coin_list.push(name='P', value=1) #PENNIES
+        self.coin_list.push(name='N', value=5) #NICKLES
+        self.coin_list.push(name='D', value=10) #DIMES
+        self.coin_list.push(name='Q', value=25) #QUARTERS
 
     def Change(self):
         current_node = self.coin_list.head
         previous_node = None
-        done = False
-
-        # restar o sumar para que llegue a 10, 20, 30...
-        # recorrer todas las monedas y comprobar su divisibilidad:
-        #  - la original y la decimal (ambas)
-        # posteriormente realizar el recorrido que ya está escrito
-
-        while not done or not current_node == None:
-            if self.cents < current_node.value: done = True
-            elif self.cents == current_node.value:
+        cents = self.cents
+        while not current_node == None:
+            if cents < current_node.value: 
+                pass
+            elif cents == current_node.value:
                 current_node.amount = 1
-                done = True
-            elif not current_node.next == None or \
-                self.cents < current_node.next.value:
-                    current_node.amount = self.cents
-                    done = True
+                cents -= current_node.value
+            else:
+                current_node.amount = cents//current_node.value
+                cents = cents%current_node.value
             
             previous_node = current_node
             current_node = previous_node.next
@@ -78,5 +72,5 @@ class ChangeUS:
 
 
 if __name__ == '__main__':
-    p = ChangeUS(1)
+    p = ChangeUS(98)
     print(p.Change())
