@@ -1,0 +1,2 @@
+# Roman Numerals kata
+In the Roman Numerals kata, we convert Arabic numbers (the one we use daily: 1, 2, 3, 4, 5, …) into their Roman equivalent: I, II, III, IV, V, … It’s a good kata, because it allows one to practice skills in a very concentrated area, as we’ll see.
